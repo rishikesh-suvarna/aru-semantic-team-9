@@ -1,0 +1,465 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.social-media-x.com/ontologies#"
+     xml:base="http://www.social-media-x.com/ontologies"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.social-media-x.com/ontologies"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.social-media-x.com/ontologies#bookmarks -->
+
+    <owl:ObjectProperty rdf:about="http://www.social-media-x.com/ontologies#bookmarks">
+        <rdfs:domain rdf:resource="http://www.social-media-x.com/ontologies#Users"/>
+        <rdfs:range rdf:resource="http://www.social-media-x.com/ontologies#Tweet"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.social-media-x.com/ontologies#chooses -->
+
+    <owl:ObjectProperty rdf:about="http://www.social-media-x.com/ontologies#chooses">
+        <rdfs:domain rdf:resource="http://www.social-media-x.com/ontologies#Users"/>
+        <rdfs:range rdf:resource="http://www.social-media-x.com/ontologies#Preferences"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.social-media-x.com/ontologies#comments -->
+
+    <owl:ObjectProperty rdf:about="http://www.social-media-x.com/ontologies#comments">
+        <rdfs:domain rdf:resource="http://www.social-media-x.com/ontologies#Users"/>
+        <rdfs:range rdf:resource="http://www.social-media-x.com/ontologies#Tweet"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.social-media-x.com/ontologies#creates -->
+
+    <owl:ObjectProperty rdf:about="http://www.social-media-x.com/ontologies#creates">
+        <rdfs:domain rdf:resource="http://www.social-media-x.com/ontologies#Users"/>
+        <rdfs:range rdf:resource="http://www.social-media-x.com/ontologies#Communities"/>
+        <rdfs:range rdf:resource="http://www.social-media-x.com/ontologies#Polls"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.social-media-x.com/ontologies#has -->
+
+    <owl:ObjectProperty rdf:about="http://www.social-media-x.com/ontologies#has">
+        <rdfs:domain rdf:resource="http://www.social-media-x.com/ontologies#Communities"/>
+        <rdfs:range rdf:resource="http://www.social-media-x.com/ontologies#Users"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.social-media-x.com/ontologies#includes -->
+
+    <owl:ObjectProperty rdf:about="http://www.social-media-x.com/ontologies#includes">
+        <rdfs:domain rdf:resource="http://www.social-media-x.com/ontologies#Messages"/>
+        <rdfs:domain rdf:resource="http://www.social-media-x.com/ontologies#Tweet"/>
+        <rdfs:range rdf:resource="http://www.social-media-x.com/ontologies#Content"/>
+        <rdfs:range rdf:resource="http://www.social-media-x.com/ontologies#Media"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.social-media-x.com/ontologies#likes -->
+
+    <owl:ObjectProperty rdf:about="http://www.social-media-x.com/ontologies#likes">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.social-media-x.com/ontologies#Users"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.social-media-x.com/ontologies#Retweet"/>
+                    <rdf:Description rdf:about="http://www.social-media-x.com/ontologies#Tweet"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.social-media-x.com/ontologies#posts -->
+
+    <owl:ObjectProperty rdf:about="http://www.social-media-x.com/ontologies#posts">
+        <rdfs:domain rdf:resource="http://www.social-media-x.com/ontologies#Users"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.social-media-x.com/ontologies#Retweet"/>
+                    <rdf:Description rdf:about="http://www.social-media-x.com/ontologies#Tweet"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.social-media-x.com/ontologies#sends -->
+
+    <owl:ObjectProperty rdf:about="http://www.social-media-x.com/ontologies#sends">
+        <rdfs:domain rdf:resource="http://www.social-media-x.com/ontologies#Users"/>
+        <rdfs:range rdf:resource="http://www.social-media-x.com/ontologies#Messages"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.social-media-x.com/ontologies#Bio -->
+
+    <owl:DatatypeProperty rdf:about="http://www.social-media-x.com/ontologies#Bio">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.social-media-x.com/ontologies#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.social-media-x.com/ontologies#Comments -->
+
+    <owl:DatatypeProperty rdf:about="http://www.social-media-x.com/ontologies#Comments">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.social-media-x.com/ontologies#Tweet"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.social-media-x.com/ontologies#Content -->
+
+    <owl:DatatypeProperty rdf:about="http://www.social-media-x.com/ontologies#Content">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.social-media-x.com/ontologies#Tweet"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.social-media-x.com/ontologies#Date_of_Birth -->
+
+    <owl:DatatypeProperty rdf:about="http://www.social-media-x.com/ontologies#Date_of_Birth">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.social-media-x.com/ontologies#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTimeStamp"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.social-media-x.com/ontologies#Email -->
+
+    <owl:DatatypeProperty rdf:about="http://www.social-media-x.com/ontologies#Email">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.social-media-x.com/ontologies#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.social-media-x.com/ontologies#First_name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.social-media-x.com/ontologies#First_name">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.social-media-x.com/ontologies#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.social-media-x.com/ontologies#Hashtags -->
+
+    <owl:DatatypeProperty rdf:about="http://www.social-media-x.com/ontologies#Hashtags">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.social-media-x.com/ontologies#Tweet"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.social-media-x.com/ontologies#Joining_Date -->
+
+    <owl:DatatypeProperty rdf:about="http://www.social-media-x.com/ontologies#Joining_Date">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.social-media-x.com/ontologies#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTimeStamp"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.social-media-x.com/ontologies#Last_name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.social-media-x.com/ontologies#Last_name">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.social-media-x.com/ontologies#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.social-media-x.com/ontologies#Likes -->
+
+    <owl:DatatypeProperty rdf:about="http://www.social-media-x.com/ontologies#Likes">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.social-media-x.com/ontologies#Tweet"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.social-media-x.com/ontologies#Profile_Picture -->
+
+    <owl:DatatypeProperty rdf:about="http://www.social-media-x.com/ontologies#Profile_Picture">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.social-media-x.com/ontologies#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.social-media-x.com/ontologies#Timestamp -->
+
+    <owl:DatatypeProperty rdf:about="http://www.social-media-x.com/ontologies#Timestamp">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.social-media-x.com/ontologies#Tweet"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTimeStamp"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.social-media-x.com/ontologies#Views -->
+
+    <owl:DatatypeProperty rdf:about="http://www.social-media-x.com/ontologies#Views">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.social-media-x.com/ontologies#Tweet"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.social-media-x.com/ontologies#City -->
+
+    <owl:Class rdf:about="http://www.social-media-x.com/ontologies#City">
+        <rdfs:subClassOf rdf:resource="http://www.social-media-x.com/ontologies#Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.social-media-x.com/ontologies#Communities -->
+
+    <owl:Class rdf:about="http://www.social-media-x.com/ontologies#Communities"/>
+    
+
+
+    <!-- http://www.social-media-x.com/ontologies#Content -->
+
+    <owl:Class rdf:about="http://www.social-media-x.com/ontologies#Content"/>
+    
+
+
+    <!-- http://www.social-media-x.com/ontologies#Country -->
+
+    <owl:Class rdf:about="http://www.social-media-x.com/ontologies#Country">
+        <rdfs:subClassOf rdf:resource="http://www.social-media-x.com/ontologies#Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.social-media-x.com/ontologies#County -->
+
+    <owl:Class rdf:about="http://www.social-media-x.com/ontologies#County">
+        <rdfs:subClassOf rdf:resource="http://www.social-media-x.com/ontologies#Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.social-media-x.com/ontologies#Digital_Media -->
+
+    <owl:Class rdf:about="http://www.social-media-x.com/ontologies#Digital_Media">
+        <rdfs:subClassOf rdf:resource="http://www.social-media-x.com/ontologies#Media"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.social-media-x.com/ontologies#Hashtags -->
+
+    <owl:Class rdf:about="http://www.social-media-x.com/ontologies#Hashtags"/>
+    
+
+
+    <!-- http://www.social-media-x.com/ontologies#Image -->
+
+    <owl:Class rdf:about="http://www.social-media-x.com/ontologies#Image">
+        <rdfs:subClassOf rdf:resource="http://www.social-media-x.com/ontologies#Digital_Media"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.social-media-x.com/ontologies#Location -->
+
+    <owl:Class rdf:about="http://www.social-media-x.com/ontologies#Location"/>
+    
+
+
+    <!-- http://www.social-media-x.com/ontologies#Media -->
+
+    <owl:Class rdf:about="http://www.social-media-x.com/ontologies#Media"/>
+    
+
+
+    <!-- http://www.social-media-x.com/ontologies#Mentions -->
+
+    <owl:Class rdf:about="http://www.social-media-x.com/ontologies#Mentions"/>
+    
+
+
+    <!-- http://www.social-media-x.com/ontologies#Messages -->
+
+    <owl:Class rdf:about="http://www.social-media-x.com/ontologies#Messages"/>
+    
+
+
+    <!-- http://www.social-media-x.com/ontologies#Notifications -->
+
+    <owl:Class rdf:about="http://www.social-media-x.com/ontologies#Notifications">
+        <rdfs:subClassOf rdf:resource="http://www.social-media-x.com/ontologies#Messages"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.social-media-x.com/ontologies#Person -->
+
+    <owl:Class rdf:about="http://www.social-media-x.com/ontologies#Person"/>
+    
+
+
+    <!-- http://www.social-media-x.com/ontologies#Polls -->
+
+    <owl:Class rdf:about="http://www.social-media-x.com/ontologies#Polls"/>
+    
+
+
+    <!-- http://www.social-media-x.com/ontologies#Preferences -->
+
+    <owl:Class rdf:about="http://www.social-media-x.com/ontologies#Preferences"/>
+    
+
+
+    <!-- http://www.social-media-x.com/ontologies#Questions -->
+
+    <owl:Class rdf:about="http://www.social-media-x.com/ontologies#Questions">
+        <rdfs:subClassOf rdf:resource="http://www.social-media-x.com/ontologies#Polls"/>
+        <owl:disjointWith rdf:resource="http://www.social-media-x.com/ontologies#Options/Votes"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.social-media-x.com/ontologies#Retweet -->
+
+    <owl:Class rdf:about="http://www.social-media-x.com/ontologies#Retweet">
+        <rdfs:subClassOf rdf:resource="http://www.social-media-x.com/ontologies#Tweet"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.social-media-x.com/ontologies#Tweet -->
+
+    <owl:Class rdf:about="http://www.social-media-x.com/ontologies#Tweet"/>
+    
+
+
+    <!-- http://www.social-media-x.com/ontologies#Users -->
+
+    <owl:Class rdf:about="http://www.social-media-x.com/ontologies#Users">
+        <rdfs:subClassOf rdf:resource="http://www.social-media-x.com/ontologies#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.social-media-x.com/ontologies#Options/Votes -->
+
+    <owl:Class rdf:about="http://www.social-media-x.com/ontologies#Options/Votes">
+        <rdfs:subClassOf rdf:resource="http://www.social-media-x.com/ontologies#Polls"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.social-media-x.com/ontologies#Rishi -->
+
+    <owl:NamedIndividual rdf:about="http://www.social-media-x.com/ontologies#Rishi">
+        <rdf:type rdf:resource="http://www.social-media-x.com/ontologies#Person"/>
+        <Bio rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Test Bio</Bio>
+        <First_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rishi</First_name>
+        <Last_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Suvarna</Last_name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.social-media-x.com/ontologies#City"/>
+            <rdf:Description rdf:about="http://www.social-media-x.com/ontologies#Country"/>
+            <rdf:Description rdf:about="http://www.social-media-x.com/ontologies#County"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
