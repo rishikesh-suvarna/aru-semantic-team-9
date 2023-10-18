@@ -434,9 +434,47 @@
 
     <owl:NamedIndividual rdf:about="http://www.social-media-x.com/ontologies#Rishi">
         <rdf:type rdf:resource="http://www.social-media-x.com/ontologies#Person"/>
+        <posts rdf:resource="http://www.social-media-x.com/ontologies#TestTweet"/>
         <Bio rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Test Bio</Bio>
         <First_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rishi</First_name>
         <Last_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Suvarna</Last_name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.social-media-x.com/ontologies#Somya -->
+
+    <owl:NamedIndividual rdf:about="http://www.social-media-x.com/ontologies#Somya">
+        <rdf:type rdf:resource="http://www.social-media-x.com/ontologies#Person"/>
+        <posts rdf:resource="http://www.social-media-x.com/ontologies#TestTweet2"/>
+        <Bio rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Test Bio Somya</Bio>
+        <First_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Somya</First_name>
+        <Last_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anchlia</Last_name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.social-media-x.com/ontologies#TestTweet -->
+
+    <owl:NamedIndividual rdf:about="http://www.social-media-x.com/ontologies#TestTweet">
+        <rdf:type rdf:resource="http://www.social-media-x.com/ontologies#Tweet"/>
+        <owl:sameAs rdf:resource="http://www.social-media-x.com/ontologies#TestTweet2"/>
+        <Content rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hey, this is our my first tweet</Content>
+        <Hashtags rdf:datatype="http://www.w3.org/2001/XMLSchema#string">#FirstTweet</Hashtags>
+        <Likes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100</Likes>
+        <Timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2023-10-18T12:20:10Z</Timestamp>
+        <Views rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1000</Views>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.social-media-x.com/ontologies#TestTweet2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.social-media-x.com/ontologies#TestTweet2">
+        <rdf:type rdf:resource="http://www.social-media-x.com/ontologies#Tweet"/>
+        <Content rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TEST TWEET 2</Content>
+        <Hashtags rdf:datatype="http://www.w3.org/2001/XMLSchema#string">#TEST</Hashtags>
+        <Views rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100</Views>
     </owl:NamedIndividual>
     
 
