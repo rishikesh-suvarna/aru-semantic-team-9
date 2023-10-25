@@ -67,6 +67,15 @@
     
 
 
+    <!-- http://www.social-media-x.com/ontologies#has_media -->
+
+    <owl:ObjectProperty rdf:about="http://www.social-media-x.com/ontologies#has_media">
+        <rdfs:domain rdf:resource="http://www.social-media-x.com/ontologies#Tweet"/>
+        <rdfs:range rdf:resource="http://www.social-media-x.com/ontologies#Media"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.social-media-x.com/ontologies#includes -->
 
     <owl:ObjectProperty rdf:about="http://www.social-media-x.com/ontologies#includes">
@@ -78,9 +87,9 @@
     
 
 
-    <!-- http://www.social-media-x.com/ontologies#likes -->
+    <!-- http://www.social-media-x.com/ontologies#liked -->
 
-    <owl:ObjectProperty rdf:about="http://www.social-media-x.com/ontologies#likes">
+    <owl:ObjectProperty rdf:about="http://www.social-media-x.com/ontologies#liked">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="http://www.social-media-x.com/ontologies#Users"/>
         <rdfs:range>
@@ -247,6 +256,15 @@
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
         <rdfs:domain rdf:resource="http://www.social-media-x.com/ontologies#Tweet"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTimeStamp"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.social-media-x.com/ontologies#URL -->
+
+    <owl:DatatypeProperty rdf:about="http://www.social-media-x.com/ontologies#URL">
+        <rdfs:domain rdf:resource="http://www.social-media-x.com/ontologies#Image"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
@@ -430,11 +448,37 @@
     
 
 
+    <!-- http://www.social-media-x.com/ontologies#ARUCommunity -->
+
+    <owl:NamedIndividual rdf:about="http://www.social-media-x.com/ontologies#ARUCommunity">
+        <rdf:type rdf:resource="http://www.social-media-x.com/ontologies#Communities"/>
+        <has rdf:resource="http://www.social-media-x.com/ontologies#Gaurav"/>
+        <has rdf:resource="http://www.social-media-x.com/ontologies#Rishi"/>
+        <has rdf:resource="http://www.social-media-x.com/ontologies#Somya"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.social-media-x.com/ontologies#Gaurav -->
+
+    <owl:NamedIndividual rdf:about="http://www.social-media-x.com/ontologies#Gaurav">
+        <rdf:type rdf:resource="http://www.social-media-x.com/ontologies#Person"/>
+        <owl:sameAs rdf:resource="http://www.social-media-x.com/ontologies#Rishi"/>
+        <Bio rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gaurva&apos;s Bio</Bio>
+        <Email rdf:datatype="http://www.w3.org/2001/XMLSchema#string">gauravsarswat@gmail.com</Email>
+        <First_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gaurav</First_name>
+        <Last_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sarswat</Last_name>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.social-media-x.com/ontologies#Rishi -->
 
     <owl:NamedIndividual rdf:about="http://www.social-media-x.com/ontologies#Rishi">
         <rdf:type rdf:resource="http://www.social-media-x.com/ontologies#Person"/>
-        <posts rdf:resource="http://www.social-media-x.com/ontologies#TestTweet"/>
+        <owl:sameAs rdf:resource="http://www.social-media-x.com/ontologies#Somya"/>
+        <creates rdf:resource="http://www.social-media-x.com/ontologies#ARUCommunity"/>
+        <posts rdf:resource="http://www.social-media-x.com/ontologies#TestTweetByRishi"/>
         <Bio rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Test Bio</Bio>
         <First_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rishi</First_name>
         <Last_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Suvarna</Last_name>
@@ -446,7 +490,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.social-media-x.com/ontologies#Somya">
         <rdf:type rdf:resource="http://www.social-media-x.com/ontologies#Person"/>
-        <posts rdf:resource="http://www.social-media-x.com/ontologies#TestTweet2"/>
+        <posts rdf:resource="http://www.social-media-x.com/ontologies#TestTweetBySomya"/>
         <Bio rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Test Bio Somya</Bio>
         <First_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Somya</First_name>
         <Last_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anchlia</Last_name>
@@ -454,11 +498,12 @@
     
 
 
-    <!-- http://www.social-media-x.com/ontologies#TestTweet -->
+    <!-- http://www.social-media-x.com/ontologies#TestTweetByRishi -->
 
-    <owl:NamedIndividual rdf:about="http://www.social-media-x.com/ontologies#TestTweet">
+    <owl:NamedIndividual rdf:about="http://www.social-media-x.com/ontologies#TestTweetByRishi">
         <rdf:type rdf:resource="http://www.social-media-x.com/ontologies#Tweet"/>
-        <owl:sameAs rdf:resource="http://www.social-media-x.com/ontologies#TestTweet2"/>
+        <owl:sameAs rdf:resource="http://www.social-media-x.com/ontologies#TestTweetBySomya"/>
+        <has_media rdf:resource="http://www.social-media-x.com/ontologies#TestTweetByRishiImage"/>
         <Content rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hey, this is our my first tweet</Content>
         <Hashtags rdf:datatype="http://www.w3.org/2001/XMLSchema#string">#FirstTweet</Hashtags>
         <Likes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100</Likes>
@@ -468,9 +513,18 @@
     
 
 
-    <!-- http://www.social-media-x.com/ontologies#TestTweet2 -->
+    <!-- http://www.social-media-x.com/ontologies#TestTweetByRishiImage -->
 
-    <owl:NamedIndividual rdf:about="http://www.social-media-x.com/ontologies#TestTweet2">
+    <owl:NamedIndividual rdf:about="http://www.social-media-x.com/ontologies#TestTweetByRishiImage">
+        <rdf:type rdf:resource="http://www.social-media-x.com/ontologies#Image"/>
+        <URL rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://www.unsplash.com/twitter.jpg</URL>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.social-media-x.com/ontologies#TestTweetBySomya -->
+
+    <owl:NamedIndividual rdf:about="http://www.social-media-x.com/ontologies#TestTweetBySomya">
         <rdf:type rdf:resource="http://www.social-media-x.com/ontologies#Tweet"/>
         <Content rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TEST TWEET 2</Content>
         <Hashtags rdf:datatype="http://www.w3.org/2001/XMLSchema#string">#TEST</Hashtags>
@@ -494,6 +548,24 @@
             <rdf:Description rdf:about="http://www.social-media-x.com/ontologies#Country"/>
             <rdf:Description rdf:about="http://www.social-media-x.com/ontologies#County"/>
         </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.social-media-x.com/ontologies#ARUCommunity"/>
+            <rdf:Description rdf:about="http://www.social-media-x.com/ontologies#Rishi"/>
+            <rdf:Description rdf:about="http://www.social-media-x.com/ontologies#TestTweetByRishi"/>
+            <rdf:Description rdf:about="http://www.social-media-x.com/ontologies#TestTweetByRishiImage"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.social-media-x.com/ontologies#ARUCommunity"/>
+            <rdf:Description rdf:about="http://www.social-media-x.com/ontologies#Somya"/>
+            <rdf:Description rdf:about="http://www.social-media-x.com/ontologies#TestTweetByRishi"/>
+            <rdf:Description rdf:about="http://www.social-media-x.com/ontologies#TestTweetByRishiImage"/>
+        </owl:distinctMembers>
     </rdf:Description>
 </rdf:RDF>
 
